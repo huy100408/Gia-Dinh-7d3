@@ -70,19 +70,26 @@
         Your browser does not support the video tag.
     </video>
 
-<video class="background-video" autoplay loop muted playsinline>
-    <source src="https://res.cloudinary.com/dzjajrfvh/video/upload/v1700000000/background-video.mp4" type="video/mp4">
-</video>
-
-<audio autoplay loop>
-    <source src="https://res.cloudinary.com/dzjajrfvh/video/upload/v1700000000/background-music.mp3" type="audio/mp3">
-</audio>
-
+    <video class="background-video" autoplay loop playsinline>
+        <source src="https://res.cloudinary.com/dzjajrfvh/video/upload/v1700000000/background-video.mp4" type="video/mp4">
+    </video>
+    
+    <audio id="background-music" loop>
+        <source src="https://res.cloudinary.com/dzjajrfvh/video/upload/v1700000000/background-music.mp3" type="audio/mp3">
+    </audio>
+    
     <div class="overlay">
         <h1>ZianMythic's Website</h1>
         <p>Discord: huy100408 (ZianMythic)</p>
         <p>Join my Discord server: <a href="https://discord.gg/pt4H9FnxBM" target="_blank">Click Here</a></p>
+        <button class="play-button" onclick="playMusic()">Play Music</button>
     </div>
+    
+    <script>
+        function playMusic() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => console.log('Autoplay failed:', error));
+        }
     
     <div class="family-section">
         <h2>My Family</h2>
